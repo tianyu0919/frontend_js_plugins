@@ -1,0 +1,56 @@
+#progress-outBox {
+  position: relative;
+  --val: 0%;
+  --radius: 3px;
+  --color: #1890ff;
+  background-color: rgb(238, 238, 238);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+#progress-outBox.done {
+  --color: #52c41a;
+}
+
+#progress-outBox.done::before {
+  animation: xx;
+}
+
+#progress-outBox::after,
+#progress-outBox::before {
+  pointer-events: none;
+  content: '';
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  height: 100%;
+  will-change: width;
+  width: var(--val);
+  border-radius: var(--radius);
+}
+
+#progress-outBox::after {
+  background-color: var(--color);
+  transition: all .2s;
+}
+
+#progress-outBox::before {
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(255, 255, 255, .3));
+  z-index: 1;
+  animation: ani linear 2s infinite;
+}
+
+@keyframes ani {
+  0% {
+    width: 0px;
+    opacity: 1;
+  }
+
+  75% {
+    width: var(--val);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
