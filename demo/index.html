@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>进度条</title>
+</head>
+<style>
+    .line{
+        position: relative;
+        width: 200px;
+        height: 20px;
+        background: #ccc;
+        border-radius: 10px;
+    }
+    .inner{
+        position: absolute;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        border-radius: 10px;
+        background: yellowgreen;
+    }
+</style>
+<body>
+    <div class="line">
+        <div class="inner"></div>
+    </div>
+    <input type="color" class="color">
+    <button class="more">增加</button>
+    <button class="less">减少</button>
+</body>
+</html>
+<script src="setup.js"></script>
+<script>
+    
+</script>
